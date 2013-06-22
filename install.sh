@@ -24,17 +24,6 @@ echo "Vim config files: "
 install_file $HOME/.vimrc $PWD/vim/vimrc
 echo -e "\n"
 
-echo "i3 config files: "
-if [ ! -d $HOME/.i3 ]
-then
-	echo "Created $HOME/.i3/ directory"
-	mkdir $HOME/.i3
-fi
-install_file $HOME/.i3/config $PWD/i3/config
-install_file $HOME/.i3status.conf $PWD/i3/i3status.conf
-echo -e "\n"
-
 echo "Misc. config files: "
-install_file $HOME/.Xresources $PWD/misc/Xresources
-install_file $HOME/.xinitrc $PWD/misc/xinitrc
+echo "none"
 echo -e "\n"

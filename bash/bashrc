@@ -14,4 +14,4 @@ export TERMINAL=urxvt
 export EDITOR=vim
 export PATH=$PATH:$HOME/.bin
 
-PS1='\[\a\][\u@\h \W]\$ '
+PS1='[\u@\e[0;32m\H\e[m \W]\$ '
