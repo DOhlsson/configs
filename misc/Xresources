@@ -1,0 +1,9 @@
+URxvt.background: black
+URxvt.foreground: white
+URxvt.font: xft:monospace:size=12
+URxvt.scrollBar: false
+
+! URL clicking
+URxvt.perl-ext-common:  default,matcher
+URxvt.url-launcher:      /usr/bin/google-chrome
+URxvt.matcher.button:   1

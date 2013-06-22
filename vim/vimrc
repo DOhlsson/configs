@@ -1,2 +1,12 @@
+" .vimrc by Daniel Ohlsson
+" To reload the vimrc while editing it use :so %
+
+
+" Some regular stuff
 syntax on
 set autoindent
+set tabstop=4
+
+" Some maps for tab commands
+map <Tab> :tabn<CR>
+map <S-Tab> :tabN<CR>
