@@ -22,7 +22,7 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
 # Let Gnome handle stuff
 exec /usr/libexec/gnome-settings-daemon
-
+exec /usr/bin/feh --bg-scale /usr/share/backgrounds/schroedinger-cat/default/standard/schroedinger-cat.jpg
 
 # Volume control
 #bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute

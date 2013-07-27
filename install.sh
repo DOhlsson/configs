@@ -36,5 +36,6 @@ echo -e "\n"
 
 echo "Misc. config files: "
 install_file $HOME/.Xresources $PWD/misc/Xresources
+install_file $HOME/.Xdefaults $PWD/misc/Xresources
 install_file $HOME/.xinitrc $PWD/misc/xinitrc
 echo -e "\n"
