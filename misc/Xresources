@@ -1,6 +1,6 @@
 URxvt.background: black
 URxvt.foreground: white
-URxvt.font: xft:monospace:size=12
+URxvt.font: xft:monospace:size=11
 URxvt.scrollBar: false
 
 ! URL clicking
