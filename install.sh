@@ -2,7 +2,7 @@
 
 # This script will install symlinks to the config-files
 
-# install_file function
+# install_file function, basically a wrapper for ln with prints
 # first argument is the target file
 # second argument is the source file
 install_file () {
@@ -37,5 +37,7 @@ echo -e "\n"
 echo "Misc. config files: "
 install_file $HOME/.Xresources $PWD/misc/Xresources
 install_file $HOME/.Xdefaults $PWD/misc/Xresources
+install_file $HOME/.Xmodmap $PWD/misc/Xmodmap
 install_file $HOME/.xinitrc $PWD/misc/xinitrc
+install_file $HOME/.asoundrc $PWD/misc/asoundrc
 echo -e "\n"
