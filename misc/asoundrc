@@ -1,0 +1,33 @@
+# http://alsa.opensrc.org/Asoundrc
+
+# This configuration file is a work in progress
+
+
+pcm.!default mono2
+
+# seems like this one doesn't work
+pcm.mono1 {
+   type plug
+   slave {
+      pcm default
+      channels 1
+   }
+   route_policy average
+}
+
+# this one works, but volume is low on right headphone
+pcm.mono2 {
+   type route
+   slave.pcm "hw:0"
+   ttable {
+       0.0 1    # in-channel 0, out-channel 0, 100% volume
+       1.0 1    # in-channel 1, out-channel 0, 100% volume
+   }
+}
+
+# output through hdmi on my laptop
+pcm.hdmi {
+	type hw
+	card 0
+	device 3
+}
