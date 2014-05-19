@@ -2,10 +2,10 @@
 # ~/.bashrc
 #
 
-PS1='\[\a\][\u@\h \W]\$ '
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
+
+PS1='\[\a\][\u@\h \W]\$ '
 
 # Aliases
 alias ls='ls --color=auto'
@@ -17,7 +17,7 @@ export TERMINAL=urxvt
 export EDITOR=vim
 export PATH=$PATH:/sbin/:/usr/sbin/
 export PATH=$PATH:$HOME/.bin
-export PATH=$PATH:$HOME/pi/arm-2008q3/bin
+#export PATH=$PATH:$HOME/pi/arm-2008q3/bin
 
 # Unlimited bash history
 export HISTFILESIZE=
