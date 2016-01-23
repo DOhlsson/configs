@@ -6,7 +6,12 @@
 syntax on
 set autoindent
 set tabstop=4
+set ignorecase
+set hlsearch
 
 " Some maps for tab commands
 map <Tab> :tabn<CR>
 map <S-Tab> :tabN<CR>
+
+" Rust syntax-highlighting
+au BufNewFile,BufRead *.rs set filetype=rust

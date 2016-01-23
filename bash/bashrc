@@ -5,19 +5,20 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-PS1='\[\a\][\u@\h \W]\$ '
+PS1='\[\a\]\[\033[01;32m\]\u@\h \[\033[01;34m\]\W \$ \[\033[00m\]'
 
 # Aliases
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias less='less -Ri'
+alias mkdir='mkdir -pv'
+alias i3lock='i3lock -c 000000'
 
 # Shell variables
 export TERMINAL=urxvt
 export EDITOR=vim
 export PATH=$PATH:/sbin/:/usr/sbin/
 export PATH=$PATH:$HOME/.bin
-#export PATH=$PATH:$HOME/pi/arm-2008q3/bin
 
 # Unlimited bash history
 export HISTFILESIZE=
