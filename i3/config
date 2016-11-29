@@ -44,6 +44,8 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+# Lock screen
+bindsym $mod+i exec i3lock -c 000000
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -106,7 +108,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindcode $mod+d focus child
+bindsym $mod+b focus child
 
 # switch to workspace
 bindsym $mod+1 workspace 1
