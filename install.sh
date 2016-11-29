@@ -39,4 +39,5 @@ install_file $HOME/.Xresources $PWD/misc/Xresources
 install_file $HOME/.Xdefaults $PWD/misc/Xresources
 install_file $HOME/.Xmodmap $PWD/misc/Xmodmap
 install_file $HOME/.xinitrc $PWD/misc/xinitrc
+install_file $HOME/.screenrc $PWD/misc/screenrc
 echo
