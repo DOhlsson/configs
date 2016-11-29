@@ -6,7 +6,10 @@
 # first argument is the target file
 # second argument is the source file
 install_file () {
-	if [ -a $1 ]
+	if [ -L $1 ]
+	then
+		echo "$1 already symlinked"		# not checking wether its symlinked correctly tho
+	elif [ -e $1 ]
 	then
 		echo "$1 exists!"
 	else
