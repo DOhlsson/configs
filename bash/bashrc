@@ -42,3 +42,12 @@ if ! shopt -oq posix; then
 		. /etc/bash_completion
 	fi
 fi
+
+# If this is an xterm/screen set the title to user@host:dir
+case "$TERM" in
+	xterm*|screen*)
+		PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
+		;;
+	*)
+		;;
+esac
