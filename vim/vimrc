@@ -1,6 +1,15 @@
 " .vimrc by Daniel Ohlsson
 " To reload the vimrc while editing it use :so %
 
+" plugin management with vim-plug
+call plug#begin()
+Plug 'https://github.com/ctrlpvim/ctrlp.vim'
+Plug 'https://github.com/ternjs/tern_for_vim'
+Plug 'https://github.com/Valloric/YouCompleteMe'
+call plug#end()
+
+" Disable scratchpad preview for YCM
+set completeopt-=preview
 
 " Some regular stuff
 syntax on
@@ -9,9 +18,13 @@ set tabstop=4
 set ignorecase
 set hlsearch
 
+" Check if working file is updated when entering that buffer
+au FocusGained,BufEnter * :silent! checktime
+
 " Some maps for tab commands
 map <Tab> :tabn<CR>
 map <S-Tab> :tabN<CR>
 
-" Rust syntax-highlighting
-au BufNewFile,BufRead *.rs set filetype=rust
+" Javascript specific indentation
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 expandtab
+autocmd BufNewFile,BufRead *.json set ft=javascript
