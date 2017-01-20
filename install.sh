@@ -21,6 +21,7 @@ install_file () {
 echo "Bash config files: "
 install_file $HOME/.bashrc $PWD/bash/bashrc
 install_file $HOME/.bash_profile $PWD/bash/bash_profile
+install_file $HOME/.inputrc $PWD/bash/inputrc
 echo
 
 echo "Vim config files: "
