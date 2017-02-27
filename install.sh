@@ -25,7 +25,13 @@ install_file $HOME/.inputrc $PWD/bash/inputrc
 echo
 
 echo "Vim config files: "
+if [ ! -d $HOME/.vim/colors/ ]
+then
+	echo "Created $HOME/.vim/colors/ directory"
+	mkdir -p $HOME/.vim/colors/
+fi
 install_file $HOME/.vimrc $PWD/vim/vimrc
+install_file $HOME/.vim/colors/mycolors.vim $PWD/vim/colors/mycolors.vim
 echo
 
 echo "i3 config files: "

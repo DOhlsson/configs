@@ -13,10 +13,15 @@ set completeopt-=preview
 
 " Some regular stuff
 syntax on
+colorscheme mycolors
 set autoindent
 set tabstop=4
 set ignorecase
 set hlsearch
+
+" Autocompletion more like bash
+set wildmode=longest,list,full
+set wildmenu
 
 " Check if working file is updated when entering that buffer
 au FocusGained,BufEnter * :silent! checktime
