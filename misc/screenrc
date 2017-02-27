@@ -14,4 +14,4 @@ hardstatus alwayslastline
 #hardstatus string '%{= kG}%-Lw%{= kW}%50> %n%f* %t%{= kG}%+Lw%< %{= kG}%-=%c:%s%{-}'
 #hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W}%c %{g}]'
 #hardstatus string "%{= KW} %H [%`] %{= Kw}|%{-} %-Lw%{= bW}%n%f %t%{-}%+Lw %=%C%a %Y-%M-%d"
-hardstatus string "%{= kG} %H | %-w%{= bW}%n %t%{-}%+w %= | %m-%d %c "
+hardstatus string "%{= kG} %H | %-Lw%{= bW}%n%f %t%{-}%+Lw %= | %l | %m-%d %c "
