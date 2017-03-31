@@ -17,8 +17,14 @@ endif
 let colors_name = "mycolors"
 
 hi Search ctermfg=0 ctermbg=3
+hi DiffChange ctermbg=5
 hi Comment ctermfg=4
 hi Todo cterm=bold ctermfg=4 ctermbg=None
-hi Number ctermfg=77
+hi Number ctermfg=82
+hi Visual cterm=reverse ctermbg=None
+hi String cterm=bold ctermfg=1
+hi link Character String
+hi Statement ctermfg=3
+
 hi link javaScriptValue Number
 " vim: sw=2
