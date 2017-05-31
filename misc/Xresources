@@ -5,6 +5,12 @@ URxvt.scrollBar:	false
 URxvt.saveLines:	10000
 URxvt.letterSpace:	-1
 
+
+! Investigate these options
+! URxvt.depth: 32
+! URxvt*cursorUnderline: true
+! URxvt.internalBorder: 0
+
 ! URL clicking
 URxvt.perl-ext-common:  default,matcher
 URxvt.url-launcher:      /usr/bin/google-chrome
