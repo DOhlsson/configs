@@ -17,10 +17,13 @@ alias i3lock='i3lock -c 000000'
 alias cal='ncal -bM'
 
 # Scripts
-source ~/scripts/imgshow.sh
+if [ -d ~/scripts ]; then
+	for script in $(ls ~/scripts); do
+		source ~/scripts/$script
+	done
+fi
 
 # Shell variables
-export TERMINAL=mate-terminal
 export EDITOR=vim
 
 export PATH=$PATH:/sbin/:/usr/sbin/
@@ -28,13 +31,16 @@ export PATH=$PATH:$HOME/.bin
 export PATH=$PATH:$HOME/node_modules/bin/
 
 # Android specific shit
-export ANDROID_HOME=$HOME/Android/Sdk
-export PATH=$PATH:$HOME/Android/Sdk/tools
-export PATH=$PATH:$HOME/Android/Sdk/tools/bin
-export PATH=$PATH:$HOME/Android/Sdk/platform-tools
-export PATH=$PATH:$HOME/Android/Sdk/build-tools/25.0.3
-export PATH=$PATH:/opt/gradle-3.5/bin
+if [ -e $HOME/Android ]; then
+	export ANDROID_HOME=$HOME/Android/Sdk
+	export PATH=$PATH:$HOME/Android/Sdk/tools
+	export PATH=$PATH:$HOME/Android/Sdk/tools/bin
+	export PATH=$PATH:$HOME/Android/Sdk/platform-tools
+	export PATH=$PATH:$HOME/Android/Sdk/build-tools/25.0.3
+	export PATH=$PATH:/opt/gradle-3.5/bin
+fi
 
+# Abandon all sanity
 if [ -e $HOME/work/bacnet-stack-0.8.3/bin ]; then
 	export PATH=$PATH:$HOME/work/bacnet-stack-0.8.3/bin/
 fi
@@ -42,6 +48,7 @@ fi
 export NODE_PATH=/usr/lib/node_modules:/home/do/node_modules/lib/node_modules
 
 # Unlimited bash history
+shopt -s histappend
 export HISTFILESIZE=
 export HISTSIZE=
 
