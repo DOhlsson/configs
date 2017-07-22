@@ -25,6 +25,7 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
 # Set wallpaper
 #exec /usr/bin/feh --bg-scale /home/do/.wallpaper/wallpaper.jpg
+exec /usr/bin/xsetroot -solid black
 
 # NetworkManager applet
 exec nm-applet
