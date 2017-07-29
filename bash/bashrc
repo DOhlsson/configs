@@ -16,6 +16,11 @@ alias mkdir='mkdir -pv'
 alias i3lock='i3lock -c 000000'
 alias cal='ncal -bM'
 
+# Functions
+function grepr() {
+  grep -Rin --exclude-dir=node_modules/ --exclude-dir=bower_components/ "$@" .
+}
+
 # Scripts
 source ~/scripts/imgshow.sh
 

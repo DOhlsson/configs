@@ -18,6 +18,7 @@ set autoindent
 set tabstop=4
 set ignorecase
 set hlsearch
+set tabpagemax=100
 
 " Autocompletion more like bash
 set wildmode=longest,list,full
