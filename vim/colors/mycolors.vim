@@ -25,6 +25,8 @@ hi Visual cterm=reverse ctermbg=None
 hi String cterm=bold ctermfg=1
 hi link Character String
 hi Statement ctermfg=3
+hi CursorLine cterm=NONE ctermbg=232
+hi CursorColumn cterm=NONE ctermbg=232
 
 hi link javaScriptValue Number
 " vim: sw=2

@@ -20,8 +20,12 @@ colorscheme mycolors
 set autoindent
 set tabstop=4
 set ignorecase
+set incsearch
 set hlsearch
 set tabpagemax=100
+set showcmd
+set cursorline
+set cursorcolumn
 
 " Autocompletion more like bash
 set wildmode=longest,list,full
@@ -34,6 +38,16 @@ au FocusGained,BufEnter * :silent! checktime
 map <Tab> :tabn<CR>
 map <S-Tab> :tabN<CR>
 map <Space> @@
+
+" Move vertically by visual line
+nnoremap j gj
+nnoremap k gk
+
+" Disable arrow-keys
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
 
 " Javascript specific indentation
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 expandtab
