@@ -7,6 +7,7 @@ try
 	Plug 'https://github.com/ctrlpvim/ctrlp.vim'
 	Plug 'https://github.com/ternjs/tern_for_vim'
 	Plug 'https://github.com/Valloric/YouCompleteMe'
+	Plug 'https://github.com/pangloss/vim-javascript'
 	call plug#end()
 catch
 endtry
@@ -30,6 +31,9 @@ set cursorcolumn
 " Autocompletion more like bash
 set wildmode=longest,list,full
 set wildmenu
+
+" Do not write new inode when saving file
+set backupcopy=yes
 
 " Check if working file is updated when entering that buffer
 au FocusGained,BufEnter * :silent! checktime
@@ -57,4 +61,10 @@ autocmd BufNewFile,BufRead *.json set ft=javascript
 autocmd FileType python setlocal tabstop=4 expandtab
 au BufEnter *.py set ft=python
 
+autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 expandtab
+
+" Get highlighting group under cursor
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+						\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+						\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>

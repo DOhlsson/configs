@@ -24,9 +24,14 @@ hi Number ctermfg=82
 hi Visual cterm=reverse ctermbg=None
 hi String cterm=bold ctermfg=1
 hi link Character String
+hi Identifier ctermfg=6
+hi Type ctermfg=6
 hi Statement ctermfg=3
 hi CursorLine cterm=NONE ctermbg=232
 hi CursorColumn cterm=NONE ctermbg=232
 
 hi link javaScriptValue Number
+hi jsObjectKey ctermfg=5
+hi jsGlobalObjects ctermfg=15
+hi jsGlobalNodeObjects ctermfg=15
 " vim: sw=2
