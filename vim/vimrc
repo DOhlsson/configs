@@ -4,10 +4,16 @@
 " plugin management with vim-plug
 try
 	call plug#begin()
-	Plug 'https://github.com/ctrlpvim/ctrlp.vim'
+	"Plug 'https://github.com/ctrlpvim/ctrlp.vim'
 	Plug 'https://github.com/ternjs/tern_for_vim'
-	Plug 'https://github.com/Valloric/YouCompleteMe'
+	" Update vim plz
+	" Plug 'https://github.com/Valloric/YouCompleteMe'
 	Plug 'https://github.com/pangloss/vim-javascript'
+	Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+	Plug 'junegunn/fzf.vim'
+	Plug 'https://github.com/tpope/vim-fugitive'
+	Plug 'https://github.com/scrooloose/nerdtree'
+	Plug 'https://github.com/jistr/vim-nerdtree-tabs'
 	call plug#end()
 catch
 endtry
@@ -25,8 +31,8 @@ set incsearch
 set hlsearch
 set tabpagemax=100
 set showcmd
-set cursorline
-set cursorcolumn
+"set cursorline		is buggy Currently makes scrolling lag
+"set cursorcolumn
 
 " Autocompletion more like bash
 set wildmode=longest,list,full
@@ -52,6 +58,23 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+
+" Tern stuff
+let g:tern_map_keys=1
+let g:tern_show_argument_hints='on_hold'
+
+" Fzf bindings
+nmap <leader>f :Files<CR>
+nmap <leader>gc :Commits<CR>
+nmap <leader>gf :GFiles<CR>
+nmap <leader>gs :GFiles?<CR>
+nmap <leader>h :History<CR>
+
+" fugitive.vim bindings
+nmap <leader>gb :Gblame<CR>
+
+" NERDTree bindings
+nmap <leader>t :NERDTreeTabsToggle<CR>
 
 " Javascript specific indentation
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 expandtab

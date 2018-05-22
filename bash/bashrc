@@ -33,6 +33,7 @@ alias i3lock='i3lock -c 000000'
 alias cal='ncal -bM'
 alias vim='vim -p'
 alias ..='cd ..'
+alias cdm='cd ~/work/marvel'
 alias grepr='grep -RIin --exclude-dir=node_modules/ --exclude-dir=bower_components/'
 
 # Scripts
@@ -87,3 +88,5 @@ case "$TERM" in
 	*)
 		;;
 esac
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
