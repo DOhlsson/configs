@@ -34,6 +34,9 @@ set showcmd
 "set cursorline		is buggy Currently makes scrolling lag
 "set cursorcolumn
 
+" Autocomplete code
+set omnifunc=syntaxcomplete#Complete
+
 " Autocompletion more like bash
 set wildmode=longest,list,full
 set wildmenu
