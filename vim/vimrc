@@ -4,7 +4,7 @@
 " plugin management with vim-plug
 try
 	call plug#begin()
-	"Plug 'https://github.com/ctrlpvim/ctrlp.vim'
+	" Plug 'https://github.com/ctrlpvim/ctrlp.vim'
 	Plug 'https://github.com/ternjs/tern_for_vim'
 	" Update vim plz
 	" Plug 'https://github.com/Valloric/YouCompleteMe'
@@ -14,6 +14,8 @@ try
 	Plug 'https://github.com/tpope/vim-fugitive'
 	Plug 'https://github.com/scrooloose/nerdtree'
 	Plug 'https://github.com/jistr/vim-nerdtree-tabs'
+	Plug 'https://github.com/vim-airline/vim-airline'
+	Plug 'https://github.com/vim-airline/vim-airline-themes'
 	call plug#end()
 catch
 endtry
@@ -78,6 +80,9 @@ nmap <leader>gb :Gblame<CR>
 
 " NERDTree bindings
 nmap <leader>t :NERDTreeTabsToggle<CR>
+
+" Airline
+let g:airline_powerline_fonts = 1
 
 " Javascript specific indentation
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 expandtab
