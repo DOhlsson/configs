@@ -16,6 +16,7 @@ try
 	Plug 'https://github.com/jistr/vim-nerdtree-tabs'
 	Plug 'https://github.com/vim-airline/vim-airline'
 	Plug 'https://github.com/vim-airline/vim-airline-themes'
+	Plug 'https://github.com/morhetz/gruvbox'
 	call plug#end()
 catch
 endtry
@@ -25,7 +26,8 @@ set completeopt-=preview
 
 " Some regular stuff
 syntax on
-colorscheme mycolors
+colorscheme gruvbox
+set background=dark	" gruvbox-dark
 set autoindent
 set tabstop=4
 set ignorecase
@@ -33,7 +35,7 @@ set incsearch
 set hlsearch
 set tabpagemax=100
 set showcmd
-"set cursorline		is buggy Currently makes scrolling lag
+"set cursorline		" buggy in vim 7.something, upgrade to 8
 "set cursorcolumn
 
 " Autocomplete code

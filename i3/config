@@ -25,7 +25,7 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
 # Set wallpaper
 #exec /usr/bin/feh --bg-scale /home/do/.wallpaper/wallpaper.jpg
-exec /usr/bin/xsetroot -solid black
+exec /usr/bin/xsetroot -solid rgb:28/28/28
 
 # NetworkManager applet
 exec nm-applet
@@ -212,8 +212,45 @@ mode "move" {
 
 bindsym $mod+m mode "move"
 
+#  ________ ________  _______
+# /_  __/ // / __/  |/  / __/
+#  / / / _  / _// /|_/ / _/
+# /_/ /_//_/___/_/  /_/___/
+#  gruvbox
+
+set $bg #282828
+set $red #cc241d
+set $green #98971a
+set $yellow #d79921
+set $blue #458588
+set $purple #b16286
+set $aqua #689d68
+set $gray #a89984
+set $darkgray #1d2021
+
+font pango:Hack 8
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
 	status_command i3status
+	colors {
+		# bar background color
+        background $bg
+        # text color used for blocks that do not have a color specified.
+        statusline $yellow
+        # workspaces section
+        #                    border  backgr. text
+        focused_workspace    $aqua $aqua $darkgray
+        inactive_workspace   $darkgray $darkgray $yellow
+        active_workspace     $darkgray $darkgray $yellow
+        urgent_workspace     $red $red $bg
+	}
 }
+
+# blue gruvbox
+# class                 border|backgr|text|indicator|child_border
+client.focused          $blue $blue $darkgray $purple $darkgray
+client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
+client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
+client.urgent           $red $red $white $red $red
