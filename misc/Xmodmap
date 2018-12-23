@@ -1,3 +1,0 @@
-! unbind Caps Lock and use it as Esc instead
-remove Lock = Caps_Lock
-keysym Caps_Lock = Escape
