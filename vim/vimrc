@@ -29,14 +29,16 @@ syntax on
 colorscheme gruvbox
 set background=dark	" gruvbox-dark
 set autoindent
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
+set expandtab
 set ignorecase
 set incsearch
 set hlsearch
 set tabpagemax=100
 set showcmd
-"set cursorline		" buggy in vim 7.something, upgrade to 8
-"set cursorcolumn
+set hidden
+set cursorline
 
 " Autocomplete code
 set omnifunc=syntaxcomplete#Complete
@@ -52,9 +54,12 @@ set backupcopy=yes
 au FocusGained,BufEnter * :silent! checktime
 
 " Some maps for tab commands
-map <Tab> :tabn<CR>
-map <S-Tab> :tabN<CR>
-map <Space> @@
+noremap <Tab> :tabn<CR>
+noremap <S-Tab> :tabN<CR>
+noremap gf <C-w>gf
+
+" execute last macro with space
+noremap <Space> @@
 
 " Move vertically by visual line
 nnoremap j gj

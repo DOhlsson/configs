@@ -39,8 +39,11 @@ alias i3lock='i3lock -c 000000'
 alias cal='ncal -Mw'
 alias vim='vim -p'
 alias ..='cd ..'
-alias grepr='grep -RIin --exclude-dir=node_modules/ --exclude-dir=bower_components/'
+alias grepr='grep -rIin --exclude-dir=node_modules/ --exclude-dir=bower_components/'
 alias did="vim +'normal Go' +'r!date' ~/did.txt"
+alias dps='docker ps --format "table {{.Names}}\t{{.ID}}\t{{.Image}}\t{{.RunningFor}}\t{{.Status}}"'
+alias dpsa='dps -a'
+alias wdpsa='watch "docker ps -a --format \"table {{.Names}}\t{{.ID}}\t{{.Image}}\t{{.RunningFor}}\t{{.Status}}\""'
 
 # Scripts
 if [ -d "$HOME/scripts" ]; then
@@ -62,9 +65,12 @@ export EDITOR=vim
 # Ansible
 export ANSIBLE_NOCOWS=1
 
+# fzf use fd file finder
+export FZF_DEFAULT_COMMAND='fd --type f'
+
 # Abandon all sanity
 if [ -e $HOME/work/bacnet-stack-0.8.3/bin ]; then
-	export PATH=$PATH:$HOME/work/bacnet-stack-0.8.3/bin/
+	export PATH=$PATH:$HOME/work/bacnet-stack-0.8.3/bin
 fi
 
 export NODE_PATH=/usr/lib/node_modules:/home/do/node_modules/lib/node_modules
@@ -95,6 +101,10 @@ if ! shopt -oq posix; then
 	fi
 fi
 
+# Kubernetes bash completion
+source <(kubectl completion bash)
+source <(minikube completion bash)
+
 # If this is an xterm/screen set the title to user@host:dir
 case "$TERM" in
 	xterm*|screen*)
@@ -104,4 +114,5 @@ case "$TERM" in
 		;;
 esac
 
+# fzf, because it's awesome
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

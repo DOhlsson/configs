@@ -42,7 +42,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Lock screen
-bindsym $mod+i exec i3lock -c 000000
+bindsym $mod+i exec i3lock -c 000000 -i ~/imgs/lock.png
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
