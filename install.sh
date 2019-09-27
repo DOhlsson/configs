@@ -29,6 +29,9 @@ echo "Vim config files: "
 mkdir -p $HOME/.vim/colors/
 install_file $HOME/.vimrc $PWD/vim/vimrc
 install_file $HOME/.vim/colors/mycolors.vim $PWD/vim/colors/mycolors.vim
+curl -sS -fLo $HOME/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
+    && echo "vim-plug installed"
 echo
 
 echo "i3 config files: "
