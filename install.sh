@@ -49,4 +49,6 @@ install_file $HOME/.xinitrc $PWD/misc/xinitrc
 install_file $HOME/.screenrc $PWD/misc/screenrc
 mkdir -p $HOME/.config/xfce4/terminal
 install_file $HOME/.config/xfce4/terminal/terminalrc $PWD/config/xfce4/terminal/terminalrc
+mkdir -p $HOME/.config/pulse
+install_file $HOME/.config/pulse/daemon.conf $PWD/config/misc/pulse_daemon.conf
 echo
