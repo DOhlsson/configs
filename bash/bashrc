@@ -118,8 +118,8 @@ if ! shopt -oq posix; then
 fi
 
 # Kubernetes bash completion
-source <(kubectl completion bash)
-source <(minikube completion bash)
+which kubectl >/dev/null && source <(kubectl completion bash)
+which minikube >/dev/null && source <(minikube completion bash)
 
 # If this is an xterm/screen set the title to user@host:dir
 case "$TERM" in
