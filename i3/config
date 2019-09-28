@@ -162,26 +162,26 @@ bindsym $mod+p exec imgshow
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-	# These bindings trigger as soon as you enter the resize mode
+  # These bindings trigger as soon as you enter the resize mode
 
-	# Pressing left will shrink the window’s width.
-	# Pressing right will grow the window’s width.
-	# Pressing up will shrink the window’s height.
-	# Pressing down will grow the window’s height.
-	bindsym h resize shrink width 10 px or 10 ppt
-	bindsym j resize grow height 10 px or 10 ppt
-	bindsym k resize shrink height 10 px or 10 ppt
-	bindsym l resize grow width 10 px or 10 ppt
+  # Pressing left will shrink the window’s width.
+  # Pressing right will grow the window’s width.
+  # Pressing up will shrink the window’s height.
+  # Pressing down will grow the window’s height.
+  bindsym h resize shrink width 10 px or 10 ppt
+  bindsym j resize grow height 10 px or 10 ppt
+  bindsym k resize shrink height 10 px or 10 ppt
+  bindsym l resize grow width 10 px or 10 ppt
 
-	# same bindings, but for the arrow keys
-	bindsym Left resize shrink width 10 px or 10 ppt
-	bindsym Down resize grow height 10 px or 10 ppt
-	bindsym Up resize shrink height 10 px or 10 ppt
-	bindsym Right resize grow width 10 px or 10 ppt
+  # same bindings, but for the arrow keys
+  bindsym Left resize shrink width 10 px or 10 ppt
+  bindsym Down resize grow height 10 px or 10 ppt
+  bindsym Up resize shrink height 10 px or 10 ppt
+  bindsym Right resize grow width 10 px or 10 ppt
 
-	# back to normal: Enter or Escape
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
+  # back to normal: Enter or Escape
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "resize"
@@ -189,21 +189,21 @@ bindsym $mod+r mode "resize"
 # moving mode (because ghosting issues on my laptop)
 mode "move" {
 
-	# move focused window
-	bindsym h move left
-	bindsym j move down
-	bindsym k move up
-	bindsym l move right
-	
-	# alternatively, you can use the cursor keys:
-	bindsym Left move left
-	bindsym Down move down
-	bindsym Up move up
-	bindsym Right move right
+  # move focused window
+  bindsym h move left
+  bindsym j move down
+  bindsym k move up
+  bindsym l move right
+  
+  # alternatively, you can use the cursor keys:
+  bindsym Left move left
+  bindsym Down move down
+  bindsym Up move up
+  bindsym Right move right
 
-	# back to normal: Enter or Escape
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
+  # back to normal: Enter or Escape
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
 }
 
 bindsym $mod+m mode "move"
@@ -229,20 +229,20 @@ font pango:Hack 8
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-	status_command i3status
+  status_command i3status
   tray_output primary
-	colors {
-		# bar background color
-        background $bg
-        # text color used for blocks that do not have a color specified.
-        statusline $yellow
-        # workspaces section
-        #                    border  backgr. text
-        focused_workspace    $aqua $aqua $darkgray
-        inactive_workspace   $darkgray $darkgray $yellow
-        active_workspace     $darkgray $darkgray $yellow
-        urgent_workspace     $red $red $bg
-	}
+  colors {
+    # bar background color
+    background $bg
+    # text color used for blocks that do not have a color specified.
+    statusline $yellow
+    # workspaces section
+    #                    border  backgr. text
+    focused_workspace    $aqua $aqua $darkgray
+    inactive_workspace   $darkgray $darkgray $yellow
+    active_workspace     $darkgray $darkgray $yellow
+    urgent_workspace     $red $red $bg
+  }
 }
 
 # blue gruvbox
