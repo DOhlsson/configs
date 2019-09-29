@@ -3,31 +3,39 @@
 
 " plugin management with vim-plug
 try
-	call plug#begin()
-	" Plug 'https://github.com/ctrlpvim/ctrlp.vim'
-	Plug 'https://github.com/ternjs/tern_for_vim'
-	" Update vim plz
-	" Plug 'https://github.com/Valloric/YouCompleteMe'
-	Plug 'https://github.com/pangloss/vim-javascript'
-	Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-	Plug 'junegunn/fzf.vim'
-	Plug 'https://github.com/tpope/vim-fugitive'
-	Plug 'https://github.com/scrooloose/nerdtree'
-	Plug 'https://github.com/jistr/vim-nerdtree-tabs'
-	Plug 'https://github.com/vim-airline/vim-airline'
-	Plug 'https://github.com/vim-airline/vim-airline-themes'
-	Plug 'https://github.com/morhetz/gruvbox'
-	call plug#end()
+  call plug#begin()
+  " Plug 'https://github.com/ctrlpvim/ctrlp.vim'
+  " Update vim plz
+  " Plug 'https://github.com/Valloric/YouCompleteMe'
+  " Installed through package manager now? 
+  " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+  " Tools
+  Plug 'junegunn/fzf.vim'
+  Plug 'tpope/vim-fugitive'
+  Plug 'scrooloose/nerdtree'
+  Plug 'jistr/vim-nerdtree-tabs'
+  Plug 'vim-syntastic/syntastic'
+
+  " Rust
+  Plug 'rust-lang/rust.vim'
+
+  " Javascript
+  Plug 'pangloss/vim-javascript'
+  Plug 'ternjs/tern_for_vim'
+
+  " Styling
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  Plug 'morhetz/gruvbox'
+  call plug#end()
 catch
 endtry
-
-" Disable scratchpad preview for YCM
-set completeopt-=preview
 
 " Some regular stuff
 syntax on
 colorscheme gruvbox
-set background=dark	" gruvbox-dark
+set background=dark  " gruvbox-dark
 set autoindent
 set shiftwidth=2
 set tabstop=2
@@ -39,6 +47,9 @@ set tabpagemax=100
 set showcmd
 set hidden
 set cursorline
+
+" Disable scratchpad preview for YCM
+set completeopt-=preview
 
 " Autocomplete code
 set omnifunc=syntaxcomplete#Complete
@@ -91,6 +102,12 @@ nmap <leader>t :NERDTreeTabsToggle<CR>
 " Airline
 let g:airline_powerline_fonts = 1
 
+" Syntastic
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 " Javascript specific indentation
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd BufNewFile,BufRead *.json set ft=javascript
@@ -104,5 +121,5 @@ autocmd FileType html setlocal shiftwidth=2 tabstop=2 expandtab
 
 " Get highlighting group under cursor
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-						\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-						\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+            \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+            \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
