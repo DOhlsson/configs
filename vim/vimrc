@@ -7,7 +7,7 @@ try
   " Plug 'https://github.com/ctrlpvim/ctrlp.vim'
   " Update vim plz
   " Plug 'https://github.com/Valloric/YouCompleteMe'
-  " Installed through package manager now? 
+  " Installed through package manager now?
   " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
   " Tools
@@ -48,6 +48,7 @@ set tabpagemax=100
 set showcmd
 set hidden
 set cursorline
+set rnu
 
 " Disable scratchpad preview for YCM
 set completeopt-=preview
@@ -125,5 +126,5 @@ autocmd FileType html setlocal shiftwidth=2 tabstop=2 expandtab
 
 " Get highlighting group under cursor
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-            \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-            \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+      \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+      \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
