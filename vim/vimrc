@@ -121,7 +121,10 @@ autocmd BufNewFile,BufRead *.json set ft=javascript
 autocmd FileType python setlocal tabstop=4 expandtab
 au BufEnter *.py set ft=python
 
+" Yaml fixes
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 expandtab
+autocmd FileType yaml let b:autoformat_autoindent=0
+
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 expandtab
 
 " Get highlighting group under cursor
