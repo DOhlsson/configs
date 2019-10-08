@@ -32,21 +32,31 @@ shopt -s globstar
 
 # Prompt colors and special ansi codes
 RED="\[\033[01;31m\]"
-CYAN="\[\033[01;36m\]"
 GREEN="\[\033[01;32m\]"
+YELLOW="\[\033[01;33m\]"
 BLUE="\[\033[01;34m\]"
+PURPLE="\[\033[01;35m\]"
+CYAN="\[\033[01;36m\]"
+GRAY="\[\033[00;37m\]"
 
 BELL="\[\a\]"
 RESET="\[\033[0m\]"
 
 returnvalue() {
-	ret=$?
-	if [ $ret -ne 0 ]; then
-		echo "[$ret] "
-	fi
+  ret=$?
+  if [ $ret -ne 0 ]; then
+    echo "[$ret] "
+  fi
 }
 
-PS1="$BELL$RED\$(returnvalue)$CYAN\# $GREEN\u@\h $BLUE\W \$ $RESET"
+if [ -n "$SSH_CLIENT" ]; then
+  HOSTCOLOR=$PURPLE
+else
+  HOSTCOLOR=$GREEN
+fi
+
+PS1="$BELL$RED\$(returnvalue)$CYAN\# $HOSTCOLOR\u@\h $BLUE\W$YELLOW\$(__git_ps1) $GRAY\$ $RESET"
+
 export TERM=xterm-256color
 
 # More colors for ls
