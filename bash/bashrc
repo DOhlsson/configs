@@ -4,8 +4,8 @@
 
 # If not running interactively, don't do anything
 case $- in
-    *i*) ;;
-      *) return;;
+  *i*) ;;
+  *) return;;
 esac
 
 # don't put duplicate lines or lines starting with space in the history.
@@ -86,16 +86,16 @@ alias xcpi='xclip -in'
 
 # Scripts
 if [ -d "$HOME/scripts" ]; then
-	for script in $(ls "$HOME/scripts"); do
-		. "$HOME/scripts/$script"
-	done
+  for script in $(ls "$HOME/scripts"); do
+    . "$HOME/scripts/$script"
+  done
 fi
 
 # Work scripts
 if [ -d "$HOME/work/scripts" ]; then
-	for script in $(ls "$HOME/work/scripts"); do
-		. "$HOME/work/scripts/$script"
-	done
+  for script in $(ls "$HOME/work/scripts"); do
+    . "$HOME/work/scripts/$script"
+  done
 fi
 
 # Shell variables
@@ -109,7 +109,7 @@ export FZF_DEFAULT_COMMAND='fd --type f'
 
 # Abandon all sanity
 if [ -e $HOME/work/bacnet-stack-0.8.3/bin ]; then
-	export PATH=$PATH:$HOME/work/bacnet-stack-0.8.3/bin
+  export PATH=$PATH:$HOME/work/bacnet-stack-0.8.3/bin
 fi
 
 export NODE_PATH=/usr/lib/node_modules:/home/do/node_modules/lib/node_modules
@@ -121,11 +121,11 @@ export NODE_PATH=/usr/lib/node_modules:/home/do/node_modules/lib/node_modules
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if ! shopt -oq posix; then
-	if [ -f /usr/share/bash-completion/bash_completion ]; then
-		. /usr/share/bash-completion/bash_completion
-	elif [ -f /etc/bash_completion ]; then
-		. /etc/bash_completion
-	fi
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
 fi
 
 # Kubernetes bash completion
@@ -134,11 +134,11 @@ which minikube >/dev/null && source <(minikube completion bash)
 
 # If this is an xterm/screen set the title to user@host:dir
 case "$TERM" in
-	xterm*|screen*)
-		PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
-		;;
-	*)
-		;;
+  xterm*|screen*)
+    PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
+    ;;
+  *)
+    ;;
 esac
 
 # fzf, because it's awesome
