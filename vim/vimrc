@@ -113,6 +113,11 @@ let g:syntastic_check_on_wq = 0
 " Autoformat on save
 au BufWrite * :Autoformat
 
+" Disable autoformat vim indent fallback
+let g:autoformat_autoindent = 0
+let g:autoformat_retab = 0
+let g:autoformat_remove_trailing_spaces = 0
+
 " Javascript specific indentation
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd BufNewFile,BufRead *.json set ft=javascript
