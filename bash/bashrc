@@ -64,6 +64,8 @@ eval "`dircolors`"
 
 # Aliases
 alias ls='ls --color=auto'
+alias cp='cp -i'
+alias mv='mv -i'
 alias grep='grep --color=auto'
 alias less='less -Ri'
 alias mkdir='mkdir -pv'
