@@ -48,7 +48,7 @@ set tabpagemax=100
 set showcmd
 set hidden
 set cursorline
-set rnu
+set number
 
 " Disable scratchpad preview for YCM
 set completeopt-=preview

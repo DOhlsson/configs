@@ -133,6 +133,7 @@ fi
 # Kubernetes bash completion
 which kubectl >/dev/null && source <(kubectl completion bash)
 which minikube >/dev/null && source <(minikube completion bash)
+which helm >/dev/null && source <(helm completion bash)
 
 # If this is an xterm/screen set the title to user@host:dir
 case "$TERM" in
