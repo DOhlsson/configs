@@ -47,6 +47,8 @@ install_file $HOME/.Xresources $PWD/misc/Xresources
 install_file $HOME/.Xdefaults $PWD/misc/Xresources
 install_file $HOME/.xinitrc $PWD/misc/xinitrc
 install_file $HOME/.screenrc $PWD/misc/screenrc
+mkdir -p $HOME/.config
+install_file $HOME/.config/user-dirs.dirs $PWD/config/user-dirs.dirs
 mkdir -p $HOME/.config/xfce4/terminal
 install_file $HOME/.config/xfce4/terminal/terminalrc $PWD/config/xfce4/terminal/terminalrc
 mkdir -p $HOME/.config/pulse
