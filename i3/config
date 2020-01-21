@@ -23,8 +23,8 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # chose an xft font, such as:
 # font xft:DejaVu Sans Mono 10
 
-# NetworkManager applet
-exec nm-applet
+# Execute XDG autoruns
+exec dex -a -e i3
 
 # Volume control
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
