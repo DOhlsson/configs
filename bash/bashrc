@@ -144,5 +144,5 @@ case "$TERM" in
     ;;
 esac
 
-# fzf, because it's awesome
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# fzf, because it's awesome, install it with apt
+[[ $- = *i* ]] && [[ -f /usr/share/doc/fzf/examples/key-bindings.bash ]] && source /usr/share/doc/fzf/examples/key-bindings.bash
