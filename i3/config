@@ -30,9 +30,9 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 exec dex -a -e i3
 
 # Volume control
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
-bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
+bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+
+bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%-
+bindsym XF86AudioMute exec amixer -D pulse sset Master toggle
 
 # Brightness control
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
