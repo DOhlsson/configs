@@ -33,10 +33,13 @@ try
 catch
 endtry
 
+" Gruvbox colorscheme
+colorscheme gruvbox
+set background=dark
+let g:gruvbox_contrast_light='hard'
+
 " Some regular stuff
 syntax on
-colorscheme gruvbox
-set background=dark  " gruvbox-dark
 set autoindent
 set shiftwidth=2
 set tabstop=2
