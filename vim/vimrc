@@ -113,8 +113,8 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" Autoformat on save
-au BufWrite * :Autoformat
+" Autoformat on save (disable it temporarily with :au! BufWrite)
+autocmd BufWrite * :Autoformat
 
 " Disable autoformat vim indent fallback
 let g:autoformat_autoindent = 0
@@ -127,7 +127,7 @@ autocmd BufNewFile,BufRead *.json set ft=javascript
 
 " Python specific indentation
 autocmd FileType python setlocal tabstop=4 expandtab
-au BufEnter *.py set ft=python
+autocmd BufEnter *.py set ft=python
 
 " Yaml fixes
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 expandtab
