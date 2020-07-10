@@ -20,6 +20,7 @@ try
 
   " Rust
   Plug 'rust-lang/rust.vim'
+  Plug 'ron-rs/ron.vim'
 
   " Javascript
   Plug 'pangloss/vim-javascript'
