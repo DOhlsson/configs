@@ -37,3 +37,5 @@ ColorPalette=#282828;#cc241d;#98971a;#d79921;#458588;#b16286;#689d6a;#a89984;#92
 TabActivityColor=#bf4040
 ShortcutsNoHelpkey=TRUE
 ShortcutsNoMenukey=TRUE
+ScrollingOnOutput=FALSE
+
