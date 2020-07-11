@@ -64,11 +64,12 @@ export TERM=xterm-256color
 eval "`dircolors`"
 
 # Aliases
-alias ls='ls --color=auto'
+alias ls='ls -Fv --color=auto'
+alias l='ls -hla --time-style=long-iso'
 alias cp='cp -i'
 alias mv='mv -i'
 alias grep='grep --color=auto'
-alias less='less -Ri'
+alias less='less -RiXFW -z-4'
 alias mkdir='mkdir -pv'
 alias i3lock='i3lock -c 000000'
 alias cal='ncal -Mw'
