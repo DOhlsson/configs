@@ -90,14 +90,14 @@ alias xcpi='xclip -in'
 
 # Scripts
 if [ -d "$HOME/scripts" ]; then
-  for script in $(ls "$HOME/scripts"); do
+  for script in $(/bin/ls "$HOME/scripts"); do
     . "$HOME/scripts/$script"
   done
 fi
 
 # Work scripts
 if [ -d "$HOME/work/scripts" ]; then
-  for script in $(ls "$HOME/work/scripts"); do
+  for script in $(/bin/ls "$HOME/work/scripts"); do
     . "$HOME/work/scripts/$script"
   done
 fi

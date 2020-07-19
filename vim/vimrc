@@ -55,6 +55,7 @@ set number
 set scrolloff=10
 
 " collect swapfiles in one directory
+silent !mkdir -p ~/.vim/swapfiles
 set directory=$HOME/.vim/swapfiles
 
 " Disable scratchpad preview for YCM
