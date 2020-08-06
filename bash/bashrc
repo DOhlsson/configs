@@ -87,6 +87,7 @@ alias xco='xclip -out -selection clipboard'
 alias xci='xclip -in -selection clipboard'
 alias xcpo='xclip -out'
 alias xcpi='xclip -in'
+alias shrug='curl -sS shrug.io | tee >(xclip -in -selection clipboard)'
 
 # Scripts
 if [ -d "$HOME/scripts" ]; then
