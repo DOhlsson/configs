@@ -79,9 +79,6 @@ noremap <Tab> :tabn<CR>
 noremap <S-Tab> :tabN<CR>
 noremap gf <C-w>gf
 
-" execute last macro with space
-noremap <Space> @@
-
 " Move vertically by visual line
 nnoremap j gj
 nnoremap k gk
@@ -95,6 +92,8 @@ noremap <Right> <NOP>
 " Tern stuff
 let g:tern_map_keys=1
 let g:tern_show_argument_hints='on_hold'
+
+let mapleader = " "
 
 " Fzf bindings
 nmap <leader>f :Files<CR>
