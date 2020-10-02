@@ -6,12 +6,13 @@ try
   call plug#begin()
 
   " Tools
-  Plug 'junegunn/fzf.vim'         " fuzzy search
-  Plug 'tpope/vim-fugitive'       " git
-  Plug 'scrooloose/nerdtree'      " file browser
-  Plug 'jistr/vim-nerdtree-tabs'  " nerdtree across tabs
-  Plug 'vim-syntastic/syntastic'  " syntax checking
-  Plug 'Chiel92/vim-autoformat'   " code formatter
+  Plug 'junegunn/fzf.vim'             " fuzzy search
+  Plug 'tpope/vim-fugitive'           " git
+  Plug 'preservim/nerdtree'           " file browser
+  Plug 'jistr/vim-nerdtree-tabs'      " nerdtree across tabs
+  Plug 'Xuyuanp/nerdtree-git-plugin'  " nerdtree git icons
+  Plug 'vim-syntastic/syntastic'      " syntax checking
+  Plug 'Chiel92/vim-autoformat'       " code formatter
   " Plug 'https://github.com/ctrlpvim/ctrlp.vim'
   " Plug 'https://github.com/Valloric/YouCompleteMe'
 
