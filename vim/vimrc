@@ -11,8 +11,9 @@ try
   Plug 'preservim/nerdtree'           " file browser
   Plug 'jistr/vim-nerdtree-tabs'      " nerdtree across tabs
   Plug 'Xuyuanp/nerdtree-git-plugin'  " nerdtree git icons
-  Plug 'vim-syntastic/syntastic'      " syntax checking
-  Plug 'Chiel92/vim-autoformat'       " code formatter
+  Plug 'easymotion/vim-easymotion'    " cool motions tool
+  " Plug 'vim-syntastic/syntastic'      " syntax checking
+  " Plug 'Chiel92/vim-autoformat'       " code formatter
   Plug 'neoclide/coc.nvim', {'branch': 'release'}   " LSP integration
   " Plug 'https://github.com/ctrlpvim/ctrlp.vim'
   " Plug 'https://github.com/Valloric/YouCompleteMe'
@@ -76,6 +77,9 @@ set backupcopy=yes
 " Check if working file is updated when entering that buffer
 au FocusGained,BufEnter * :silent! checktime
 
+" Use space as <leader> key
+let mapleader = " "
+
 " Some maps for tab commands
 noremap <Tab> :tabn<CR>
 noremap <S-Tab> :tabN<CR>
@@ -91,11 +95,15 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
+" Get highlighting group under cursor
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+      \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+      \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
+" TODO remove!
 " Tern stuff
 let g:tern_map_keys=1
 let g:tern_show_argument_hints='on_hold'
-
-let mapleader = " "
 
 " Fzf bindings
 nmap <leader>f :Files<CR>
@@ -113,19 +121,32 @@ nmap <leader>t :NERDTreeTabsToggle<CR>
 " Airline
 let g:airline_powerline_fonts = 1
 
+" TODO remove!
 " Syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
 
+" TODO remove!
 " Autoformat on save (disable it temporarily with :au! BufWrite)
-autocmd BufWrite * :Autoformat
+" autocmd BufWrite * :Autoformat
 
+" TODO remove!
 " Disable autoformat vim indent fallback
-let g:autoformat_autoindent = 0
-let g:autoformat_retab = 0
-let g:autoformat_remove_trailing_spaces = 0
+" let g:autoformat_autoindent = 0
+" let g:autoformat_retab = 0
+" let g:autoformat_remove_trailing_spaces = 0
+
+" Easymotion
+let g:EasyMotion_keys = 'asdghklqwertyuiopzxcvbnmfj'
+let g:EasyMotion_do_mapping = 0
+nmap <leader>el <Plug>(easymotion-overwin-line)
+nmap <leader>ew <Plug>(easymotion-overwin-w)
+nmap <leader>ef <Plug>(easymotion-overwin-f)
+
+
+"""" Buffer commands
 
 " Javascript specific indentation
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 expandtab
@@ -139,17 +160,13 @@ autocmd BufEnter *.py set ft=python
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType yaml let b:autoformat_autoindent=0
 
+" Html
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 expandtab
-
-" Get highlighting group under cursor
-map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-      \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-      \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 
 """" CoC related stuff
 
-" Start CoC disabled, enable with :CocEnable
+" Start CoC disabled, enable with <leader>cs
 let g:coc_start_at_startup = v:false
 
 set updatetime=300
@@ -186,8 +203,21 @@ endif
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
-" Use `<leader>d` to get all diagnostics of current buffer in location list.
-nmap <leader>d :CocDiagnostics<CR>
+" Use `<leader>cd` to get all diagnostics of current buffer in location list.
+nmap <leader>cd :CocDiagnostics<CR>
+
+" Start Coc
+nmap <leader>cs :CocStart<CR>
+
+" Format current buffer
+nmap <leader>cf :call CocAction('format')<CR>
+
+" Get suggestions to fix warnings and errors on current line
+nmap <leader>ca <Plug>(coc-codeaction)
+
+" Rename a symbol
+nmap <leader>cr <Plug>(coc-rename)
+
 
 let g:coc_disable_startup_warning = 1
 nmap <silent> gd <Plug>(coc-definition)
