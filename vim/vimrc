@@ -148,13 +148,15 @@ nmap <leader>ef <Plug>(easymotion-overwin-f)
 
 """" Buffer commands
 
+" Rust specific indentation
+autocmd FileType rust setlocal shiftwidth=4 tabstop=4 expandtab
+
 " Javascript specific indentation
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd BufNewFile,BufRead *.json set ft=javascript
 
 " Python specific indentation
 autocmd FileType python setlocal tabstop=4 expandtab
-autocmd BufEnter *.py set ft=python
 
 " Yaml fixes
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 expandtab
@@ -213,7 +215,7 @@ nmap <leader>cs :CocStart<CR>
 nmap <leader>cf :call CocAction('format')<CR>
 
 " Get suggestions to fix warnings and errors on current line
-nmap <leader>ca <Plug>(coc-codeaction)
+nmap <leader>ca <Plug>(coc-codeaction-line)
 
 " Rename a symbol
 nmap <leader>cr <Plug>(coc-rename)

@@ -16,7 +16,6 @@ MiscTabCloseMiddleClick=TRUE
 MiscTabPosition=GTK_POS_TOP
 MiscHighlightUrls=TRUE
 FontName=Hack 10
-FontAllowBold=TRUE
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
 ScrollingLines=0
 MiscBellUrgent=TRUE
