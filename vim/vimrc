@@ -115,8 +115,9 @@ nmap <leader>h :History<CR>
 " fugitive.vim bindings
 nmap <leader>gb :Gblame<CR>
 
-" NERDTree bindings
+" NERDTree
 nmap <leader>t :NERDTreeTabsToggle<CR>
+let g:nerdtree_tabs_autofind=1
 
 " Airline
 let g:airline_powerline_fonts = 1
