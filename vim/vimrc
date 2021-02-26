@@ -80,6 +80,15 @@ au FocusGained,BufEnter * :silent! checktime
 " Use space as <leader> key
 let mapleader = " "
 
+" Remap x key as a delete without yank
+noremap x "_d
+noremap xx "_dd
+noremap X "_D
+
+" Remap Y key to act as all the other capital letters
+" Seriously, why is Y = yy when D = d$ and C = c$ ?!
+noremap Y y$
+
 " Some maps for tab commands
 noremap <Tab> :tabn<CR>
 noremap <S-Tab> :tabN<CR>
@@ -168,6 +177,9 @@ autocmd FileType html setlocal shiftwidth=2 tabstop=2 expandtab
 
 
 """" CoC related stuff
+
+" When installing, run :CocInstall coc-tsserver coc-rust-analyzer
+" TODO: use system rust-analyzer
 
 " Start CoC disabled, enable with <leader>cs
 let g:coc_start_at_startup = v:false
