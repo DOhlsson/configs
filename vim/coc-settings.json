@@ -1,0 +1,7 @@
+{
+  "rust-analyzer": {
+    "server": {
+      "path": "~/bin/rust-analyzer"
+    }
+  }
+}
