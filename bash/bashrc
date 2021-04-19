@@ -110,7 +110,7 @@ export EDITOR=vim
 export ANSIBLE_NOCOWS=1
 
 # fzf use fd file finder
-export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_DEFAULT_COMMAND='fdfind --type f'
 
 # Abandon all sanity
 if [ -e $HOME/work/bacnet-stack-0.8.3/bin ]; then

@@ -6,17 +6,14 @@ try
   call plug#begin()
 
   " Tools
-  Plug 'junegunn/fzf.vim'             " fuzzy search
+  Plug 'junegunn/fzf'                 " fuzzy search
+  Plug 'junegunn/fzf.vim'             " need both of these
   Plug 'tpope/vim-fugitive'           " git
   Plug 'preservim/nerdtree'           " file browser
-  Plug 'jistr/vim-nerdtree-tabs'      " nerdtree across tabs
   Plug 'Xuyuanp/nerdtree-git-plugin'  " nerdtree git icons
   Plug 'easymotion/vim-easymotion'    " cool motions tool
-  " Plug 'vim-syntastic/syntastic'      " syntax checking
-  " Plug 'Chiel92/vim-autoformat'       " code formatter
+  Plug 'airblade/vim-rooter'          " cd down to git root
   Plug 'neoclide/coc.nvim', {'branch': 'release'}   " LSP integration
-  " Plug 'https://github.com/ctrlpvim/ctrlp.vim'
-  " Plug 'https://github.com/Valloric/YouCompleteMe'
 
   " Rust
   Plug 'rust-lang/rust.vim'
@@ -24,7 +21,6 @@ try
 
   " Javascript
   Plug 'pangloss/vim-javascript'
-  " Plug 'ternjs/tern_for_vim'
 
   " Styling
   Plug 'vim-airline/vim-airline'
@@ -77,6 +73,9 @@ set backupcopy=yes
 " Check if working file is updated when entering that buffer
 au FocusGained,BufEnter * :silent! checktime
 
+" Clear the jumplist once vim starts
+autocmd VimEnter * clearjumps
+
 " Use space as <leader> key
 let mapleader = " "
 
@@ -90,9 +89,9 @@ noremap X "_D
 noremap Y y$
 
 " Some maps for tab commands
-noremap <Tab> :tabn<CR>
-noremap <S-Tab> :tabN<CR>
-noremap gf <C-w>gf
+" noremap <Tab> :tabn<CR>
+" noremap <S-Tab> :tabN<CR>
+" noremap gf <C-w>gf
 
 " Move vertically by visual line
 nnoremap j gj
@@ -109,44 +108,26 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
       \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
       \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
-" TODO remove!
-" Tern stuff
-let g:tern_map_keys=1
-let g:tern_show_argument_hints='on_hold'
-
 " Fzf bindings
 nmap <leader>f :Files<CR>
 nmap <leader>gc :Commits<CR>
 nmap <leader>gf :GFiles<CR>
 nmap <leader>gs :GFiles?<CR>
 nmap <leader>h :History<CR>
+nmap <leader>b :Buffers<CR>
+nmap <leader>s :Rg<CR>
 
 " fugitive.vim bindings
 nmap <leader>gb :Gblame<CR>
 
-" NERDTree
-nmap <leader>t :NERDTreeTabsToggle<CR>
-let g:nerdtree_tabs_autofind=1
+" find current file in NERDTree
+nmap <leader>t :NERDTreeFind<CR>
+
+" Start NERDTree and put the cursor back in the other window.
+autocmd VimEnter * NERDTreeVCS | wincmd p
 
 " Airline
 let g:airline_powerline_fonts = 1
-
-" TODO remove!
-" Syntastic
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-
-" TODO remove!
-" Autoformat on save (disable it temporarily with :au! BufWrite)
-" autocmd BufWrite * :Autoformat
-
-" TODO remove!
-" Disable autoformat vim indent fallback
-" let g:autoformat_autoindent = 0
-" let g:autoformat_retab = 0
-" let g:autoformat_remove_trailing_spaces = 0
 
 " Easymotion
 let g:EasyMotion_keys = 'asdghklqwertyuiopzxcvbnmfj'
