@@ -79,10 +79,14 @@ autocmd VimEnter * clearjumps
 " Use space as <leader> key
 let mapleader = " "
 
-" Remap x key as a delete without yank
-noremap x "_d
-noremap xx "_dd
-noremap X "_D
+" Remap s key as a delete without writing to cut register
+noremap s "_d
+noremap ss "_dd
+noremap S "_D
+
+" Remap x key so that it does not write to cut register
+noremap x "_x
+noremap X "_X
 
 " Remap Y key to act as all the other capital letters
 " Seriously, why is Y = yy when D = d$ and C = c$ ?!
@@ -106,6 +110,10 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+inoremap <Up> <NOP>
+inoremap <Down> <NOP>
+inoremap <Left> <NOP>
+inoremap <Right> <NOP>
 
 " Get highlighting group under cursor
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
