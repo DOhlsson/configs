@@ -16,6 +16,9 @@ set $mod Mod4
 # Execute XDG autoruns
 exec dex -a -e i3
 
+# Jump to urgent window
+bindsym $mod+x [urgent=latest] focus
+
 # Volume control
 bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+
 bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%-
