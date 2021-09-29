@@ -148,6 +148,9 @@ nmap <leader>el <Plug>(easymotion-overwin-line)
 nmap <leader>ew <Plug>(easymotion-overwin-w)
 nmap <leader>ef <Plug>(easymotion-overwin-f)
 
+" vim-rooter
+let g:rooter_patterns = ['.git']
+
 
 """" Buffer commands
 
