@@ -130,7 +130,7 @@ nmap <leader>b :Buffers<CR>
 nmap <leader>s :Rg<CR>
 
 " fugitive.vim bindings
-nmap <leader>gb :Gblame<CR>
+nmap <leader>gb :Git blame<CR>
 
 " find current file in NERDTree
 nmap <leader>t :NERDTreeFind<CR>
