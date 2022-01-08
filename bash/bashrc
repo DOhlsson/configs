@@ -148,3 +148,7 @@ esac
 
 # fzf, because it's awesome, install it with apt
 [[ $- = *i* ]] && [[ -f /usr/share/doc/fzf/examples/key-bindings.bash ]] && source /usr/share/doc/fzf/examples/key-bindings.bash
+# BEGIN ANSIBLE MANAGED BLOCK
+export PATH=:~/bin:$HOME/istio/bin:$PATH
+export KUBECONFIG=$HOME/.kube/config:/home/do/work/dev-ops/kubeconfigs/kube_config_kna.yml:/home/do/work/dev-ops/kubeconfigs/kube_config_sto.yml:$KUBECONFIG
+# END ANSIBLE MANAGED BLOCK
