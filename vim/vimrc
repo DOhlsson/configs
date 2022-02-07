@@ -129,8 +129,12 @@ nmap <leader>h :History<CR>
 nmap <leader>b :Buffers<CR>
 nmap <leader>s :Rg<CR>
 
+" make fzf open in fullscreen
+let g:fzf_layout = {'window':{'width': 1,'height': 1}}
+
 " fugitive.vim bindings
 nmap <leader>gb :Git blame<CR>
+nmap <leader>gd :Gdiff<CR>
 
 " find current file in NERDTree
 nmap <leader>t :NERDTreeFind<CR>
@@ -159,7 +163,6 @@ autocmd FileType rust setlocal shiftwidth=4 tabstop=4 expandtab
 
 " Javascript specific indentation
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 expandtab
-autocmd BufNewFile,BufRead *.json set ft=javascript
 
 " Python specific indentation
 autocmd FileType python setlocal tabstop=4 expandtab
