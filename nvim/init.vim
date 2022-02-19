@@ -75,7 +75,7 @@ autocmd FileType yaml setlocal tabstop=2
 autocmd FileType html setlocal tabstop=2
 
 
-""" Remaps
+""" Key mappings
 
 " Remap s key as a delete without writing to cut register
 noremap s "_d
@@ -124,7 +124,7 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
       \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 
-""" Plugin specific bindings
+""" Plugin specific mappings
 
 " Netrw
 nmap <leader>te :Explore<CR>
@@ -149,7 +149,7 @@ nmap <leader>ew <Plug>(easymotion-overwin-w)
 nmap <leader>ef <Plug>(easymotion-overwin-f)
 
 
-""" CoC bindings
+""" CoC mappings
 
 " Start Coc
 nmap <leader>cs :CocStart<CR>    
