@@ -10,10 +10,10 @@ Plug 'morhetz/gruvbox'              " Gruvbox theme
 " Productivity
 Plug 'junegunn/fzf'                 " fuzzy search
 Plug 'junegunn/fzf.vim'             " need both of these
-Plug 'tpope/vim-fugitive'           " git
-Plug 'easymotion/vim-easymotion'    " cool motions tool
+Plug 'tpope/vim-fugitive'           " git integration
 Plug 'airblade/vim-rooter'          " git root as cwd
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP integration
+Plug 'phaazon/hop.nvim'             " cool jump motions
 
 " Language specific
 Plug 'rust-lang/rust.vim'           " Rust
@@ -143,10 +143,8 @@ nmap <leader>s :Rg<CR>
 nmap <leader>gb :Git blame<CR>
 nmap <leader>gd :Gdiff<CR>
 
-" easymotion
-nmap <leader>el <Plug>(easymotion-overwin-line)
-nmap <leader>ew <Plug>(easymotion-overwin-w)
-nmap <leader>ef <Plug>(easymotion-overwin-f)
+" hop.nvim
+nmap <leader>w :HopWordMW<CR>
 
 
 """ CoC mappings
@@ -221,13 +219,11 @@ let g:gruvbox_contrast_light='hard'
 
 " Make fzf window open in fullscreen
 let g:fzf_layout = {'window':{'width': 1,'height': 1}}
-
-" easymotion
-let g:EasyMotion_keys = 'asdghklqwertyuiopzxcvbnmfj'
-let g:EasyMotion_do_mapping = 0 " Disable default mappings
-
 " vim-rooter
 let g:rooter_patterns = ['.git']
 
 " CoC
 let g:coc_start_at_startup = v:false
+
+" hop.vim
+lua require'hop'.setup { uppercase_labels = true }
