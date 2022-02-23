@@ -47,10 +47,6 @@ set wildmode=full     " Complete to first word
 set updatetime=300    " Wait 300 seconds for saving swap files and cursorhold autocommand
 set shortmess-=S      " Display search hit count
 set guifont=Hack:h10  " Font and size in GUI:s
-set winwidth=999      " Current window as wide as possible
-set winminwidth=30    " Window minimum width
-set equalalways       " Windows are always equal in size
-set eadirection=ver   " Only apply equalalways vertically (height)
 
 " Use space as <leader> key
 let mapleader=" "
@@ -60,9 +56,6 @@ let g:netrw_liststyle=3
 
 " Make Neovide fancier
 let g:neovide_cursor_vfx_mode="sonicboom"
-
-" Do not highlight errors in markdown docs
-hi link markdownError Normal
 
 " Check if working file is updated when entering that buffer
 autocmd FocusGained,BufEnter * :silent! checktime
@@ -76,6 +69,9 @@ autocmd FileType javascript setlocal tabstop=2
 autocmd FileType python setlocal tabstop=4 noexpandtab
 autocmd FileType yaml setlocal tabstop=2
 autocmd FileType html setlocal tabstop=2
+
+" Do not highlight errors in markdown docs
+autocmd FileType markdown highlight link markdownError Normal
 
 
 """ Key mappings
