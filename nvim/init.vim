@@ -61,6 +61,9 @@ let g:netrw_liststyle=3
 " Make Neovide fancier
 let g:neovide_cursor_vfx_mode="sonicboom"
 
+" Do not highlight errors in markdown docs
+hi link markdownError Normal
+
 " Check if working file is updated when entering that buffer
 autocmd FocusGained,BufEnter * :silent! checktime
 
