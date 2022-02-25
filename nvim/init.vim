@@ -63,7 +63,10 @@ autocmd FocusGained,BufEnter * :silent! checktime
 " Clear the jumplist once vim starts
 autocmd VimEnter * clearjumps
 
-" Filetype related indentation
+" Set filetype for included ssh configs
+autocmd BufNewFile,BufRead ~/.ssh/config.d/* setfiletype sshconfig
+
+" Filetype specific indentation
 autocmd FileType rust setlocal tabstop=4
 autocmd FileType javascript setlocal tabstop=2
 autocmd FileType python setlocal tabstop=4 noexpandtab
@@ -121,6 +124,9 @@ noremap <PageDown> <NOP>
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
       \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
       \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
+" I do this often enough it requires its own keymap =P
+nmap <leader>ee :e ~/.config/nvim/init.vim<CR>
 
 
 """ Plugin specific mappings
