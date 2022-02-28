@@ -66,8 +66,9 @@ eval "`dircolors`"
 # Aliases
 alias ls='ls -Fv --color=auto'
 alias l='ls -hla --time-style=long-iso'
-alias cp='cp -i'
-alias mv='mv -i'
+alias rm='rm -iv'
+alias cp='cp -iv'
+alias mv='mv -iv'
 alias grep='grep --color=auto'
 alias less='less -RiXFW -z-4'
 alias mkdir='mkdir -pv'
@@ -75,7 +76,6 @@ alias i3lock='i3lock -c 000000'
 alias cal='ncal -Mw'
 alias ..='cd ..'
 alias grepr='grep -rIin --exclude-dir=node_modules/ --exclude-dir=bower_components/'
-alias did="vim +'normal Go' +'r!date -Iseconds' ~/did.txt"
 alias dps='docker ps --format "table {{.Names}}\t{{.ID}}\t{{.Image}}\t{{.RunningFor}}\t{{.Status}}"'
 alias dpsa='dps -a'
 alias wdpsa='watch "docker ps -a --format \"table {{.Names}}\t{{.ID}}\t{{.Image}}\t{{.RunningFor}}\t{{.Status}}\""'
@@ -103,18 +103,13 @@ if [ -d "$HOME/work/scripts" ]; then
 fi
 
 # Shell variables
-export EDITOR=vim
+export EDITOR=nvim
 
 # Ansible
 export ANSIBLE_NOCOWS=1
 
 # fzf use fd file finder
 export FZF_DEFAULT_COMMAND='fdfind --type f'
-
-# Abandon all sanity
-if [ -e $HOME/work/bacnet-stack-0.8.3/bin ]; then
-  export PATH=$PATH:$HOME/work/bacnet-stack-0.8.3/bin
-fi
 
 export NODE_PATH=/usr/lib/node_modules:/home/do/node_modules/lib/node_modules
 
@@ -148,6 +143,7 @@ esac
 
 # fzf, because it's awesome, install it with apt
 [[ $- = *i* ]] && [[ -f /usr/share/doc/fzf/examples/key-bindings.bash ]] && source /usr/share/doc/fzf/examples/key-bindings.bash
+
 # BEGIN ANSIBLE MANAGED BLOCK
 export PATH=:~/bin:$HOME/istio/bin:$PATH
 export KUBECONFIG=$HOME/.kube/config:/home/do/work/dev-ops/kubeconfigs/kube_config_kna.yml:/home/do/work/dev-ops/kubeconfigs/kube_config_sto.yml:$KUBECONFIG
