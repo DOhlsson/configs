@@ -23,30 +23,31 @@ Plug 'pangloss/vim-javascript'      " JavaScript
 call plug#end()
 
 " Regular nvim settings
-syntax on             " Syntax highlighting
-set autoindent        " Indent newlines automatically
-set cindent           " Indent c-style syntax automatically
-set expandtab         " Indent tabs as spaces
-set tabstop=2         " Indent with 2 spaces
-set softtabstop=-1    " Indent is removed with same amount of characters as tabstop
-set shiftwidth=0      " Indent with cindent the same amount of characters as tabstop
-set ignorecase        " Search is not case-sensitive
-set smartcase         " Search is case sensitive when searching for words with capital letters
-set incsearch         " Search while typing
-set hlsearch          " Search results are highlighted
-set hidden            " Keep unsaved data and undo information when switching buffers
-set backupcopy=yes    " Do not write new inode when saving file
-set showcmd           " Show count of marked lines in bottom right
-set cursorline        " Highlight the line the Cursor is on
-set number            " Line numbers
-set signcolumn=number " Add signs on top of number column
-set linebreak         " Break long lines by word-boundaries instead of in the middle of word
-set scrolloff=10      " Cursor centered-ish
-set wildmenu          " Better completion mode
-set wildmode=full     " Complete to first word
-set updatetime=300    " Wait 300 seconds for saving swap files and cursorhold autocommand
-set shortmess-=S      " Display search hit count
-set guifont=Hack:h10  " Font and size in GUI:s
+syntax on                   " Syntax highlighting
+set autoindent              " Indent newlines automatically
+set cindent                 " Indent c-style syntax automatically
+set expandtab               " Indent tabs as spaces
+set tabstop=2               " Indent with 2 spaces
+set softtabstop=-1          " Indent is removed with same amount of characters as tabstop
+set shiftwidth=0            " Indent with cindent the same amount of characters as tabstop
+set ignorecase              " Search is not case-sensitive
+set smartcase               " Search is case sensitive when searching for words with capital letters
+set incsearch               " Search while typing
+set hlsearch                " Search results are highlighted
+set hidden                  " Keep unsaved data and undo information when switching buffers
+set backupcopy=yes          " Do not write new inode when saving file
+set showcmd                 " Show count of marked lines in bottom right
+set cursorline              " Highlight the line the Cursor is on
+set number                  " Line numbers
+set signcolumn=number       " Add signs on top of number column
+set linebreak               " Break long lines by word-boundaries instead of in the middle of word
+set scrolloff=10            " Cursor centered-ish
+set wildmenu                " Better completion mode
+set wildmode=full           " Complete to first word
+set updatetime=300          " Wait 300 seconds for saving swap files and cursorhold autocommand
+set shortmess-=S            " Display search hit count
+set guifont=Hack:h10        " Font and size in GUI:s
+set clipboard+=unnamedplus  " Always use system clipboard for cut/copy
 
 " Use space as <leader> key
 let mapleader=" "
