@@ -102,8 +102,13 @@ if [ -d "$HOME/work/scripts" ]; then
   done
 fi
 
-# Shell variables
-export EDITOR=nvim
+# Set EDITOR depending to nvim or vim
+if command -v nvim &> /dev/null
+then
+  export EDITOR=nvim
+else
+  export EDITOR=vim
+fi
 
 # Ansible
 export ANSIBLE_NOCOWS=1
