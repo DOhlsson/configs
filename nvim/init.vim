@@ -23,7 +23,7 @@ Plug 'pangloss/vim-javascript'      " JavaScript
 
 call plug#end()
 
-" Regular nvim settings
+" Some regular stuff
 syntax on                   " Syntax highlighting
 set autoindent              " Indent newlines automatically
 set cindent                 " Indent c-style syntax automatically
@@ -45,8 +45,8 @@ set linebreak               " Break long lines by word-boundaries instead of in 
 set scrolloff=10            " Cursor centered-ish
 set wildmenu                " Better completion mode
 set wildmode=full           " Complete to first word
-set updatetime=300          " Wait 300 milliseconds for saving swap files and cursorhold autocommand
 set shortmess-=S            " Display search hit count
+set updatetime=300          " Wait 300 milliseconds for saving swap files and cursorhold autocommand
 set guifont=Hack:h10        " Font and size in GUI:s
 set clipboard+=unnamedplus  " Always use system clipboard for cut/copy
 
@@ -108,7 +108,7 @@ map <c-j> <c-n>
 map! <c-k> <c-p>
 map! <c-j> <c-n>
 
-" Disable arrow-keys use hjkl instead
+" Disable arrow-keys, use hjkl instead
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
@@ -223,6 +223,7 @@ let g:airline_powerline_fonts=1
 colorscheme gruvbox
 set background=dark
 let g:gruvbox_contrast_light='hard'
+let g:gruvbox_contrast_dark='medium'
 
 " Make fzf window open in fullscreen
 let g:fzf_layout = {'window':{'width': 1,'height': 1}}
