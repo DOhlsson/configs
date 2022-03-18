@@ -4,8 +4,8 @@
 call plug#begin()
 
 " Styling
-Plug 'vim-airline/vim-airline'      " Pretty statusline
 Plug 'morhetz/gruvbox'              " Gruvbox theme
+Plug 'vim-airline/vim-airline'      " Pretty statusline
 
 " Productivity
 Plug 'junegunn/fzf'                 " fuzzy search
@@ -14,6 +14,7 @@ Plug 'tpope/vim-fugitive'           " git integration
 Plug 'airblade/vim-rooter'          " git root as cwd
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP integration
 Plug 'phaazon/hop.nvim'             " cool jump motions
+Plug 'chentau/marks.nvim'           " better mark handling
 
 " Language specific
 Plug 'rust-lang/rust.vim'           " Rust
@@ -44,7 +45,7 @@ set linebreak               " Break long lines by word-boundaries instead of in 
 set scrolloff=10            " Cursor centered-ish
 set wildmenu                " Better completion mode
 set wildmode=full           " Complete to first word
-set updatetime=300          " Wait 300 seconds for saving swap files and cursorhold autocommand
+set updatetime=300          " Wait 300 milliseconds for saving swap files and cursorhold autocommand
 set shortmess-=S            " Display search hit count
 set guifont=Hack:h10        " Font and size in GUI:s
 set clipboard+=unnamedplus  " Always use system clipboard for cut/copy
@@ -147,7 +148,7 @@ nmap <leader>s :Rg<CR>
 
 " fugitive.vim
 nmap <leader>gb :Git blame<CR>
-nmap <leader>gd :Gdiff<CR>
+nmap <leader>gd :Gvdiffsplit<CR>
 
 " hop.nvim
 nmap <leader>w :HopWordMW<CR>
@@ -231,5 +232,16 @@ let g:rooter_patterns = ['.git']
 " CoC
 let g:coc_start_at_startup = v:false
 
-" hop.vim
+" hop.nvim
 lua require'hop'.setup { uppercase_labels = true }
+
+" marks.nvim
+lua <<EOF
+require'marks'.setup {
+  builtin_marks = { ".", "<", ">", "^" },
+  bookmark_0 = {
+    sign = "⚑",
+    virt_text = "hello world"
+  },
+}
+EOF
