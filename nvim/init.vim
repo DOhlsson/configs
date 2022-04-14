@@ -4,7 +4,7 @@
 call plug#begin()
 
 " Styling
-Plug 'morhetz/gruvbox'              " Gruvbox theme
+Plug 'gruvbox-community/gruvbox'    " Gruvbox theme
 Plug 'vim-airline/vim-airline'      " Pretty statusline
 
 " Productivity
@@ -48,16 +48,17 @@ set wildmode=full           " Complete to first word
 set shortmess-=S            " Display search hit count
 set updatetime=300          " Wait 300 milliseconds for saving swap files and cursorhold autocommand
 set guifont=Hack:h10        " Font and size in GUI:s
+set termguicolors           " Enables truecolor support
 set clipboard+=unnamedplus  " Always use system clipboard for cut/copy
 
 " Use space as <leader> key
-let mapleader=" "
+let mapleader = " "
 
 " Make netrw default to tree view
-let g:netrw_liststyle=3
+let g:netrw_liststyle = 3
 
 " Make Neovide fancier
-let g:neovide_cursor_vfx_mode="sonicboom"
+let g:neovide_cursor_vfx_mode = "sonicboom"
 
 " Check if working file is updated when entering that buffer
 autocmd FocusGained,BufEnter * :silent! checktime
@@ -217,13 +218,14 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 """ Plugin specific configuration
 
 " Airline
-let g:airline_powerline_fonts=1
+let g:airline_powerline_fonts = 1
 
 " Gruvbox colorscheme
-colorscheme gruvbox
+let g:gruvbox_contrast_light = 'hard'
+let g:gruvbox_contrast_dark = 'medium'
+let g:gruvbox_italic = 1
 set background=dark
-let g:gruvbox_contrast_light='hard'
-let g:gruvbox_contrast_dark='medium'
+colorscheme gruvbox
 
 " Make fzf window open in fullscreen
 let g:fzf_layout = {'window':{'width': 1,'height': 1}}
