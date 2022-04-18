@@ -4,13 +4,13 @@
 new_window 1pixel
 hide_edge_borders both
 
+# Dp not "bounce" the focus when focus reaches end of screen
+focus_wrapping no
+
 # jump back and forth by pressing same workspace number
 workspace_auto_back_and_forth yes
 
-# workspace on second screen for compy
-workspace 10 output HDMI-1
-
-# super key as mod
+# super key as modifier
 set $mod Mod4
 
 # Execute XDG autoruns
