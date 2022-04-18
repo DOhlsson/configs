@@ -241,6 +241,7 @@ lua require'hop'.setup { uppercase_labels = true }
 " marks.nvim
 lua <<EOF
 require'marks'.setup {
+  refresh_interval = 0,
   builtin_marks = { ".", "<", ">", "^" },
   bookmark_0 = {
     sign = "⚑",
@@ -248,3 +249,6 @@ require'marks'.setup {
   },
 }
 EOF
+
+" Update marks without a timer, see https://github.com/chentau/marks.nvim/issues/62
+autocmd CursorHold * lua require'marks'.refresh()
