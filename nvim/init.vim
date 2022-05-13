@@ -14,7 +14,7 @@ Plug 'tpope/vim-fugitive'           " git integration
 Plug 'airblade/vim-rooter'          " git root as cwd
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP integration
 Plug 'phaazon/hop.nvim'             " cool jump motions
-Plug 'chentau/marks.nvim'           " better mark handling
+Plug 'chentoast/marks.nvim'         " better mark handling
 
 " Language specific
 Plug 'rust-lang/rust.vim'           " Rust
