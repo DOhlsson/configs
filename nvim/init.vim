@@ -166,8 +166,9 @@ nmap <leader>cd :CocDiagnostics<CR>
 " Format current buffer
 nmap <leader>cf :call CocAction('format')<CR>
 
-" Get suggestions to fix warnings and errors on current line
-nmap <leader>ca <Plug>(coc-codeaction-line)
+" Get suggestions to fix warnings and errors on cursor or selection
+nmap <leader>ca <Plug>(coc-codeaction-cursor)
+xmap <leader>ca <Plug>(coc-codeaction-selected)
 
 " Rename symbol under cursor
 nmap <leader>cr <Plug>(coc-rename)
