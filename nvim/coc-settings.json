@@ -1,5 +1,14 @@
 {
+  "codeLens.enable": true,
+  "diagnostic": {
+    "enable": true,
+    "virtualText": true,
+    "virtualTextLevel": "hint"
+  },
   "rust-analyzer": {
+    "inlayHints": {
+      "enable": true
+    },
     "server": {
       "path": "~/bin/rust-analyzer"
     }
