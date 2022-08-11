@@ -116,10 +116,8 @@ export ANSIBLE_NOCOWS=1
 # fzf use fd file finder
 export FZF_DEFAULT_COMMAND='fdfind --type f'
 
+# makes node use ~/node_modules (see .npmrc)
 export NODE_PATH=/usr/lib/node_modules:/home/do/node_modules/lib/node_modules
-
-# colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -132,10 +130,12 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Kubernetes bash completion
-which kubectl >/dev/null && source <(kubectl completion bash)
-#which minikube >/dev/null && source <(minikube completion bash)
-which helm >/dev/null && source <(helm completion bash)
+# enables kubernetes bash completion
+function k8smode () {
+  which kubectl >/dev/null && source <(kubectl completion bash)
+  which minikube >/dev/null && source <(minikube completion bash)
+  which helm >/dev/null && source <(helm completion bash)
+}
 
 # If this is an xterm/screen set the title to user@host:dir
 case "$TERM" in
