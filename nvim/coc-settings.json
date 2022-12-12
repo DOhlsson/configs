@@ -6,5 +6,10 @@
     "server": {
       "path": "~/bin/rust-analyzer"
     }
+  },
+  "typescript": {
+    "inlayHints": {
+      "variableTypes.enabled": true
+    }
   }
 }
