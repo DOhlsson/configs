@@ -146,6 +146,13 @@ case "$TERM" in
     ;;
 esac
 
+# ssh-agent
+if [ ! -S ~/.ssh/ssh_auth_sock ]; then
+  eval `ssh-agent -t 3600`
+  ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+fi
+export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+
 # fzf, because it's awesome, install it with apt
 [[ $- = *i* ]] && [[ -f /usr/share/doc/fzf/examples/key-bindings.bash ]] && source /usr/share/doc/fzf/examples/key-bindings.bash
 
