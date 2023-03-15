@@ -29,10 +29,10 @@ bindsym XF86MonBrightnessUp exec brightnessctl s 10%+
 bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
 
 # Media player control
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioPause exec playerctl pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec playerctl -a play-pause
+bindsym XF86AudioPause exec playerctl -a pause
+bindsym XF86AudioNext exec playerctl -a next
+bindsym XF86AudioPrev exec playerctl -a previous
 
 # Lock screen
 bindsym $mod+i exec i3lock -u -c 000000 -i ~/imgs/lock.png -p win
@@ -167,12 +167,12 @@ bindsym $mod+m mode "move"
 
 # music control mode
 mode "music" {
-  bindsym p exec playerctl play-pause
+  bindsym p exec playerctl -a play-pause
 
-  bindsym h exec playerctl previous
-  bindsym j exec playerctl volume 0.1-
-  bindsym k exec playerctl volume 0.1+
-  bindsym l exec playerctl next
+  bindsym h exec playerctl -a previous
+  bindsym j exec playerctl -a volume 0.1-
+  bindsym k exec playerctl -a volume 0.1+
+  bindsym l exec playerctl -a next
 
   # back to normal: Enter or Escape
   bindsym Return mode "default"
