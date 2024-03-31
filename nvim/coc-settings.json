@@ -4,7 +4,7 @@
       "enable": true
     },
     "server": {
-      "path": "~/bin/rust-analyzer"
+      "path": "~/.cargo/bin/rust-analyzer"
     }
   },
   "typescript": {
