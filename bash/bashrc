@@ -80,6 +80,7 @@ alias dps='docker ps --format "table {{.Names}}\t{{.ID}}\t{{.Image}}\t{{.Running
 alias dpsa='dps -a'
 alias wdpsa='watch "docker ps -a --format \"table {{.Names}}\t{{.ID}}\t{{.Image}}\t{{.RunningFor}}\t{{.Status}}\""'
 alias fd='fdfind'
+alias glg='git log --graph --oneline --branches --tags --remotes'
 
 # Aliases for xclip
 alias xco='xclip -out -selection clipboard'
