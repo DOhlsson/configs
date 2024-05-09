@@ -1,0 +1,17 @@
+theme = "gruvbox"
+
+[editor]
+mouse = false
+cursorline = true
+scrolloff = 10
+idle-timeout = 0
+bufferline = "multiple"
+color-modes = true
+
+[editor.lsp]
+display-messages = true
+display-inlay-hints = true
+
+[editor.indent-guides]
+render = true
+character = "▏"
