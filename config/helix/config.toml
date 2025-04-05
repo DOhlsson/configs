@@ -8,6 +8,7 @@ idle-timeout = 0
 bufferline = "multiple"
 color-modes = true
 soft-wrap.enable = true
+auto-pairs = false
 
 [editor.lsp]
 display-messages = true

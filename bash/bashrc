@@ -131,12 +131,11 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# enables kubernetes bash completion
-function k8smode () {
-  which kubectl >/dev/null && source <(kubectl completion bash)
-  which minikube >/dev/null && source <(minikube completion bash)
-  which helm >/dev/null && source <(helm completion bash)
-}
+# enables rustup/cargo bash completion
+if command -v rustup &> /dev/null; then
+  source <(rustup completions bash)
+  source <(rustup completions bash cargo)
+fi
 
 # If this is an xterm/screen set the title to user@host:dir
 case "$TERM" in
