@@ -103,10 +103,10 @@ if [ -d "$HOME/work/scripts" ]; then
   done
 fi
 
-# Set EDITOR depending to nvim or vim
-if command -v nvim &> /dev/null
+# Set EDITOR depending to hx or vim
+if command -v hx &> /dev/null
 then
-  export EDITOR=nvim
+  export EDITOR=hx
 else
   export EDITOR=vim
 fi
