@@ -185,9 +185,10 @@ if [ -d "$HOME/work/scripts" ]; then
 fi
 
 # Set EDITOR depending to hx or vim
-if command -v hx &> /dev/null
-then
-  export EDITOR=hx
+hx_path=$(command -v hx)
+if [ -n "$hx_path" ]; then
+  # Sets the editor by absolute path, because sudoedit seems to have trouble finding hx otherwise
+  export EDITOR=$hx_path
 else
   export EDITOR=vim
 fi
