@@ -170,20 +170,6 @@ export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 # fzf use fd file finder
 export FZF_DEFAULT_COMMAND='fdfind --type f'
 
-# Scripts
-if [ -d "$HOME/scripts" ]; then
-  for script in $(/bin/ls "$HOME/scripts"); do
-    . "$HOME/scripts/$script"
-  done
-fi
-
-# Work scripts
-if [ -d "$HOME/work/scripts" ]; then
-  for script in $(/bin/ls "$HOME/work/scripts"); do
-    . "$HOME/work/scripts/$script"
-  done
-fi
-
 # Set EDITOR depending to hx or vim
 hx_path=$(command -v hx)
 if [ -n "$hx_path" ]; then
@@ -192,9 +178,6 @@ if [ -n "$hx_path" ]; then
 else
   export EDITOR=vim
 fi
-
-# Ansible
-export ANSIBLE_NOCOWS=1
 
 # makes node use ~/node_modules (see .npmrc)
 export NODE_PATH=/usr/lib/node_modules:/home/do/node_modules/lib/node_modules
